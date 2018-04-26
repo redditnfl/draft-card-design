@@ -161,7 +161,8 @@ gulp.task('build:html', function(){
 		.pipe(plumber({errorHandler: errorAlert}))
 		//.pipe(fileinclude({prefix: '@', basepath: file_paths.src.modules}))
 		.pipe(pug({
-			basedir: file_paths.src.modules
+			basedir: file_paths.src.modules,
+			pretty: true
 		}))
 		.pipe(gulp.dest(task_info.dist))
 		.pipe(live_reload());
