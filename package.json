@@ -38,11 +38,13 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-webserver": "^0.9.1",
+    "normalize-scss": "^7.0.1",
     "postcss-alias": "^2.0.0",
     "postcss-base64": "^0.7.1",
     "postcss-short-size": "^3.0.0"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.0"
   }
 }
