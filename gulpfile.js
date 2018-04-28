@@ -144,7 +144,8 @@ gulp.task('build:js', function(){
 	var task_info = get_file_paths("js");
 	return gulp.src(task_info.src)
 		.pipe(plumber({errorHandler: errorAlert}))
-		.pipe(fileinclude({prefix: '@', basepath: file_paths.src.modules}))
+		.pipe(fileinclude({prefix: '@'}))
+		.pipe(fileinclude({prefix: '@module_', basepath: file_paths.src.modules}))
 		.pipe(fileinclude({prefix: '@vendor_', basepath: './node_modules/'}))
 		.pipe(babel({
 			presets: ['es2017'],

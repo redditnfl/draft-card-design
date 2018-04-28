@@ -38,6 +38,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-webserver": "^0.9.1",
+    "node-vibrant": "^3.0.0",
     "normalize-scss": "^7.0.1",
     "postcss-alias": "^2.0.0",
     "postcss-base64": "^0.7.1",

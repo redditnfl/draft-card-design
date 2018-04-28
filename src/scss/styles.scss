@@ -32,21 +32,49 @@ body{
 	background-position: center right;
 	background-size: cover;
 	filter: grayscale(100%);
-	opacity: .7;
 	z-index: 2;
 }
 .name-contain{
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	left: 0;
+	width: 100%;
 	z-index: 3;
 	padding: 14px;
 	font-size: 92px;
 	font-weight: 900;
 	letter-spacing: .08em;
+	white-space: nowrap;
 	line-height: 86px;
 	text-transform: uppercase;
 	color: #D40000;
+}
+.name-contain > div{
+	display: inline-block;
+	width: auto;
+}
+.credit{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 3;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-size: 20px;
+	line-height: 40px;
+	padding: 4px 14px 0;
+}
+.logo{
+	position: absolute;
+	top: 14px;
+	left: 14px;
+	z-index: 3;
+	height: 80px;
+	width: 80px;
+	background-image: url("../images/logos-160x160.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
 }
 .basic-info{
 	&{
@@ -155,19 +183,31 @@ body{
 	}
 }
 
-
+$count: 0;
+$l_height: 80;
+$v_pos: $l_height;
 @each $team in $nfl-teams{
 	$body_class: map-get($team, class);
-	$text_color: map-get($team, tc);
-	$foreground: map-get($team, fg);
+	$text_color: lighten(map-get($team, tc), 4);
+	$foreground: lighten(map-get($team, fg), 4);
 	$background: map-get($team, bg);
 	body.#{$body_class}{
-		.draft-card-contain,
-		.photo{
-			background: $background;
+		.draft-card-contain{
+			background: linear-gradient(342deg, lighten($background,10), darken($background,10));
 		}
 		.name-contain{
 			color: $text_color;
+		}
+		.credit{
+			background: $text_color;
+			@if lighten($background,4) == $text_color {
+				color: $foreground;
+			} @else{
+				color: $background;
+			}
+		}
+		.logo{
+			background-position: 0 (-(($v_pos + ($l_height * $count)) * 1px));
 		}
 		.basic-info .right,
 		.random-fact .left,
@@ -176,4 +216,5 @@ body{
 			color: $foreground;
 		}
 	}
+	$count: $count + 1;
 }
