@@ -1,0 +1,40 @@
+body.home-town{
+	&{
+	}
+	.draft-card-contain{
+		background-color: #eee;
+		background-image: url("../images/exclusive-paper.png");
+		background-position: center;
+		background-repeat: repeat;
+	}
+	.paper-name{
+		margin-bottom: 30px;
+		letter-spacing: 10px;
+		font-family: georgia, serif;
+		font-size: 50px;
+		text-align: center;
+		text-transform: uppercase;
+		color: $black;
+	}
+	.name-contain{
+		font-family: georgia, serif;
+		color: $black;
+		margin-bottom: 20px;
+	}
+	.basic-info .left,
+	.basic-info .right,
+	.stats .header,
+	.stats .number,
+	.special-info .left,
+	.special-info .right{
+		font-family: georgia, serif;
+		color: lighten($black, 20);
+	}
+	.social-info{
+		svg{ fill: $black; }
+		.username {
+			font-family: georgia, serif;
+			color: $black;
+		}
+	}
+}

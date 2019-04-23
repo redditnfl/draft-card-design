@@ -2,16 +2,18 @@ html
 	head
 		link(rel="stylesheet" href="https://use.typekit.net/ikq5fbd.css")
 		link(rel="stylesheet" href="/assets/css/styles.css")
-	body.redskins
+	body.redskins.home-town
 		div.draft-card-contain.JS-card-contain
+			div.paper-name
+				img(src="/assets/images/paper-title.png")
 			div.photo
 				div.photo-contain.JS-player-image(style="background-image: url(https://i.imgur.com/Ik80sUw.jpg);")
-				div.name-contain.JS-name-contain
-					div.first.JS-text-bound(style="font-size: 92px; line-height: 86px; letter-spacing: .08em;") Marquez
-					<br>
-					div.last.JS-text-bound(style="font-size: 92px; line-height: 86px; letter-spacing: .08em;") Valdes-Scantling
 				div.credit r/NFL
 				div.logo
+			div.name-contain.JS-name-contain
+				div.first.JS-text-bound(style="font-size: 92px; line-height: 86px; letter-spacing: .08em;") Marquez
+				<br>
+				div.last.JS-text-bound(style="font-size: 92px; line-height: 86px; letter-spacing: .08em;") Valdes-Scantling
 			div.basic-info
 				div.line
 					span.player_position.left OLB &mdash; Florida State
@@ -39,9 +41,6 @@ html
 						div.stat
 							div.header 20 Yard Shuttle - Combine
 							div.number 4.28 Seconds
-			div.special-info.random-fact
-				div.left #factoid
-				div.right Enjoys spending his off days shaping plastic trees for his model train set.
 			div.social-info
 				div.account.reddit
 					span.icon
@@ -51,5 +50,4 @@ html
 					span.icon
 						include logos/twitter.pug
 					span.username twitterName
-
 		script(src="/assets/js/app.js")

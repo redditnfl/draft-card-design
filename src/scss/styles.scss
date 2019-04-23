@@ -35,12 +35,8 @@ body{
 	z-index: 2;
 }
 .name-contain{
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	width: 100%;
 	z-index: 3;
-	padding: 14px;
 	font-size: 92px;
 	font-weight: 900;
 	letter-spacing: .08em;
@@ -48,6 +44,12 @@ body{
 	line-height: 86px;
 	text-transform: uppercase;
 	color: #D40000;
+}
+.photo .name-contain{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 14px;
 }
 .name-contain > div{
 	display: inline-block;
@@ -100,7 +102,7 @@ body{
 		text-align: right;
 	}
 }
-.random-fact{
+.special-info{
 	&{
 		display: inline-block;
 		vertical-align: text-top;
@@ -182,6 +184,34 @@ body{
 		text-transform: uppercase;
 	}
 }
+.social-info{
+	&{
+		overflow: hidden;
+	}
+	.account{
+		display: block;
+		width: 50%;
+		float: left;
+	}
+	.account + .account{
+		text-align: right;
+	}
+	.icon{
+		display: inline-block;
+		width: 20px;
+		vertical-align: middle;
+	}
+	svg{
+		display: block;
+		width: 100%
+	}
+	.username{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 10px;
+		color: #fff;
+	}
+}
 
 $count: 0;
 $l_height: 80;
@@ -210,11 +240,17 @@ $v_pos: $l_height;
 			background-position: 0 (-(($v_pos + ($l_height * $count)) * 1px));
 		}
 		.basic-info .right,
-		.random-fact .left,
+		.special-info .left,
 		.stats .title,
 		.stats .number{
 			color: $foreground;
 		}
+		svg{
+			fill: $foreground;
+		}
 	}
 	$count: $count + 1;
 }
+
+@import "themes/hometown";
+@import "themes/shiny";
