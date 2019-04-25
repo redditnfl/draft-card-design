@@ -24,6 +24,9 @@ body.home-town{
 		color: $black;
 		margin-bottom: 20px;
 	}
+    .basic-info .line span {
+        letter-spacing: 0;
+    }
 	.basic-info .left,
 	.basic-info .right,
 	.stats .header,
