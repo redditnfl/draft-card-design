@@ -21,7 +21,7 @@ Vibrant.from(player_image).getPalette(function(err, palette) {
 
 
 
-var contain_width = 600;
+var contain_width = 540;
 
 $(".JS-text-bound").each(function(){
 	var element = $(this);

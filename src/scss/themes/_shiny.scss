@@ -1,53 +1,42 @@
 body.shiny{
-	.draft-card-contain{
-		&{
-			position: relative;
-			background-image: url("../images/shiny.jpg");
-			background-size: cover;
-		}
-		&:after{
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			z-index: 2;
-			background-image: url("../images/shiny.jpg");
-			background-size: cover;
-			background-blend-mode: screen;
-			opacity: .6;
-		}
-	}
 	.photo{
 		&{
-			background-color: #fff;
+			z-index: 3;
+			background-color: transparent;
 		}
 		.photo-contain{
-			opacity: .5;
+			opacity: 1;
 			z-index: 1;
 		}
 	}
-	.name-contain{
-		color: #f71bff;
-		margin-bottom: 20px;
-	}
-	.credit{
-		background: #37f9e7;
-		color: #f71bff;
-	}
-	.basic-info .left,
-	.basic-info .right,
-	.stats .header,
-	.stats .number,
-	.special-info .right{
-		color: lighten(#fff, 20);
-	}
-	.special-info .left{
-		color: #f71bff;
-	}
-	.social-info{
-		svg{ fill: #37f9e7; }
-		.username { color: #37f9e7; }
+	@each $team in $nfl-teams{
+		$body_class: map-get($team, class);
+		$text_color: lighten(map-get($team, tc), 4);
+		$foreground: lighten(map-get($team, fg), 4);
+		$background: map-get($team, bg);
+		&.#{$body_class}{
+			.draft-card-contain{
+				background: linear-gradient(130deg,
+					darken($background,20) 0,
+					darken($background,0) 14%,
+					lighten($background,20) 15%,
+					darken($background,0) 24%,
+					lighten($background,0) 26%,
+					darken($background,0) 34%,
+					lighten($background,5) 35%,
+					darken($background,0) 36%,
+					lighten($background,0) 46%,
+					lighten($background,20) 55%,
+					lighten($background,0) 56%,
+					lighten($background,0) 66%,
+					darken($background,5) 75%,
+					lighten($background,0) 76%,
+					lighten($background,0) 86%,
+					lighten($background,20) 95%,
+					lighten($background,0) 96%,
+				);
+			}
+		}
+		$count: $count + 1;
 	}
 }

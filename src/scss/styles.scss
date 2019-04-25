@@ -67,6 +67,12 @@ body{
 	line-height: 40px;
 	padding: 4px 14px 0;
 }
+.flag{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	z-index: 3;
+}
 .logo{
 	position: absolute;
 	top: 14px;

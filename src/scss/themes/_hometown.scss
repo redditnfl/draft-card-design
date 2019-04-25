@@ -7,6 +7,9 @@ body.home-town{
 		background-position: center;
 		background-repeat: repeat;
 	}
+	.photo-contain{
+		filter: grayscale(0%);
+	}
 	.paper-name{
 		margin-bottom: 30px;
 		letter-spacing: 10px;
@@ -26,9 +29,24 @@ body.home-town{
 	.stats .header,
 	.stats .number,
 	.special-info .left,
-	.special-info .right{
+	.special-info .right,
+	.caption{
 		font-family: georgia, serif;
 		color: lighten($black, 20);
+	}
+	.caption{
+		padding: 10px 0;
+		color: lighten($black, 30);
+	}
+	.special-info{
+		&{}
+		.left{
+			vertical-align: middle;
+			font-style: normal;
+		}
+		.right{
+			vertical-align: middle;
+		}
 	}
 	.social-info{
 		svg{ fill: $black; }
