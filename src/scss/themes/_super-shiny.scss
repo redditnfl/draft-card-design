@@ -1,0 +1,26 @@
+body.super-shiny{
+	.draft-card-contain{
+		background: linear-gradient(87deg,
+			#4C657B 0,
+			#348081 6%,
+			#BEF4B8 10%,
+			#9FBCC0 24%,
+			#90AFB4 25%,
+			#98EEFB 28%,
+			#79C9EC 29%,
+			#7780C5 30%,
+			#D2ABA6 32%,
+			#E8C4AE 36%,
+		);
+	}
+	.photo{
+		&{
+			z-index: 3;
+			background-color: transparent;
+		}
+		.photo-contain{
+			opacity: 1;
+			z-index: 1;
+		}
+	}
+}

@@ -1,0 +1,65 @@
+body.reverse{
+	.photo{
+		&{
+			z-index: 3;
+			background-color: transparent;
+		}
+		.photo-contain{
+			opacity: 1;
+			z-index: 1;
+		}
+	}
+	@each $team in $nfl-teams{
+		$body_class: map-get($team, class);
+		$text_color: lighten(map-get($team, tc), 4);
+		$foreground: lighten(map-get($team, fg), 4);
+		$background: map-get($team, bg);
+		&.#{$body_class}{
+			.draft-card-contain{
+				background: linear-gradient(130deg,
+					lighten($foreground,20) 0,
+					lighten($foreground,0) 14%,
+					darken($foreground,20) 15%,
+					lighten($foreground,0) 24%,
+					darken($foreground,0) 26%,
+					lighten($foreground,0) 34%,
+					darken($foreground,5) 35%,
+					lighten($foreground,0) 36%,
+					darken($foreground,0) 46%,
+					darken($foreground,20) 55%,
+					darken($foreground,0) 56%,
+					darken($foreground,0) 66%,
+					lighten($foreground,5) 75%,
+					darken($foreground,0) 76%,
+					darken($foreground,0) 86%,
+					darken($foreground,20) 95%,
+					darken($foreground,0) 96%,
+				);
+			}
+			.name-contain{
+				color: $text_color;
+			}
+			.credit{
+				color: $text_color;
+				@if lighten($background,4) == $text_color {
+					background: $foreground;
+				} @else{
+					background: $background;
+				}
+			}
+			.logo{
+				background-position: 0 (-(($v_pos + ($l_height * $count)) * 1px));
+			}
+			.basic-info .right,
+			.special-info .left,
+			.stats .title,
+			.stats .number{
+				color: $background;
+			}
+			svg{
+				fill: $background;
+			}
+		}
+		$count: $count + 1;
+	}
+}
